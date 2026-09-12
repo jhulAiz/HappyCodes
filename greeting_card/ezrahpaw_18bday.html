@@ -16,11 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
-/* ==========================================================================
-   HAPPY BIRTHDAY — style (embedded, mobile-friendly + scroll-fixed)
-   ========================================================================== */
 
-/* 01. DESIGN TOKENS ------------------------------------------------------- */
 :root {
   --navy-deep: #04091a;
   --navy: #071130;
@@ -64,7 +60,7 @@
   --safe-right: env(safe-area-inset-right, 0px);
 }
 
-/* 02. RESET & BASE -------------------------------------------------------- */
+
 *, *::before, *::after {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -98,14 +94,14 @@ body {
   position: relative;
 }
 
-/* Lock scroll only while the intro is showing */
+
 body:not(.is-entered) {
   overflow: hidden;
   height: 100vh;
   height: 100dvh;
 }
 
-/* Explicit unlock once the user has entered — safety net */
+
 body.is-entered {
   overflow: visible;
   height: auto;
@@ -151,7 +147,7 @@ p { margin: 0; overflow-wrap: break-word; }
   border-radius: 6px;
 }
 
-/* 03. BACKGROUND ---------------------------------------------------------- */
+
 .bg {
   position: fixed; inset: 0; z-index: 0;
   overflow: hidden; pointer-events: none;
@@ -252,7 +248,7 @@ p { margin: 0; overflow-wrap: break-word; }
   pointer-events: none; z-index: 90;
 }
 
-/* 04. CURSOR (desktop only) ---------------------------------------------- */
+
 .cursor-dot, .cursor-ring {
   position: fixed; top: 0; left: 0;
   border-radius: 50%; pointer-events: none;
@@ -291,7 +287,7 @@ body.has-cursor .cursor-ring { opacity: 1; }
   to   { opacity: 0; transform: translate(var(--sx, 0), var(--sy, 0)) scale(0.2); }
 }
 
-/* 05. INTRO --------------------------------------------------------------- */
+
 .intro {
   position: fixed; inset: 0; z-index: 100;
   display: grid; place-items: center;
@@ -348,7 +344,7 @@ body.has-cursor .cursor-ring { opacity: 1; }
   pointer-events: auto;
 }
 
-/* 06. PROGRESS ------------------------------------------------------------ */
+
 .progress {
   position: fixed;
   top: var(--safe-top);
@@ -367,7 +363,7 @@ body.has-cursor .cursor-ring { opacity: 1; }
 }
 @keyframes shimmer { to { background-position: 220% 0; } }
 
-/* 07. NAVIGATION ---------------------------------------------------------- */
+
 .nav {
   position: fixed;
   top: calc(3px + var(--safe-top));
@@ -505,7 +501,7 @@ body.is-entered .nav {
 .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
 .nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* 08. BUTTONS ------------------------------------------------------------- */
+
 .btn {
   position: relative;
   display: inline-flex; align-items: center; justify-content: center;
@@ -595,7 +591,7 @@ body.is-entered .nav {
   to { transform: scale(2.6); opacity: 0; }
 }
 
-/* 09. LAYOUT / SECTIONS --------------------------------------------------- */
+
 .main { position: relative; z-index: 5; opacity: 0; }
 body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
 
@@ -646,7 +642,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
   box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-/* 10. HERO + CAKE --------------------------------------------------------- */
+
 .hero {
   min-height: 100vh;
   min-height: 100svh;
@@ -852,7 +848,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
 }
 .scroll-cue:hover { border-color: var(--cyan); box-shadow: 0 0 22px rgba(127, 230, 255, 0.45); }
 
-/* 11. MEMORIES + MODAL ---------------------------------------------------- */
+
 .memory-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
@@ -1011,7 +1007,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
   font-size: clamp(0.9rem, 3.6vw, 1rem);
 }
 
-/* 12. WHY YOU'RE SPECIAL — BUBBLES --------------------------------------- */
+
 .bubble-field {
   display: flex; flex-wrap: wrap;
   justify-content: center;
@@ -1076,7 +1072,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
   box-shadow: 0 28px 60px -24px rgba(58, 107, 255, 0.95), 0 0 40px -12px rgba(127, 230, 255, 0.6);
 }
 
-/* 13. QUIZ ---------------------------------------------------------------- */
+
 .quiz {
   max-width: 780px; margin-inline: auto;
   padding: clamp(20px, 4.5vw, 44px);
@@ -1192,7 +1188,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
   line-height: 1.6;
 }
 
-/* 14. WISHES -------------------------------------------------------------- */
+
 .wishes {
   position: relative; max-width: 860px;
   margin-inline: auto;
@@ -1250,7 +1246,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
   box-shadow: 0 0 18px rgba(127, 230, 255, 0.9);
 }
 
-/* 15. SECRET OVERLAY + LETTER -------------------------------------------- */
+
 .secret { display: flex; justify-content: center; padding: 0 8px; }
 .secret-overlay {
   position: fixed; inset: 0; z-index: 130;
@@ -1341,7 +1337,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
 }
 .secret-overlay__close { margin-bottom: 6px; }
 
-/* 16. FINAL GIFT + FINALE ------------------------------------------------- */
+
 .final { text-align: center; }
 .gift-stage { display: flex; justify-content: center; padding: 20px 0 16px; }
 .gift {
@@ -1458,7 +1454,7 @@ body.is-entered .main { opacity: 1; transition: opacity 1s ease 0.25s; }
   animation: pulseHeart 3s ease-in-out infinite;
 }
 
-/* 17. FOOTER + TOAST ------------------------------------------------------ */
+
 .footer {
   position: relative; z-index: 5;
   text-align: center;
@@ -1509,7 +1505,7 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
 }
 .toast.is-in { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 
-/* 18. REVEAL -------------------------------------------------------------- */
+
 .reveal {
   opacity: 0; transform: translateY(34px);
   transition: opacity 0.95s var(--ease), transform 0.95s var(--ease);
@@ -1521,17 +1517,13 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
 .reveal[data-delay="3"] { transition-delay: 0.3s; }
 .reveal[data-delay="4"] { transition-delay: 0.4s; }
 
-/* ==========================================================================
-   19. RESPONSIVE — TABLET & DESKTOP
-   ========================================================================== */
+
 @media (max-width: 1080px) {
   .nav__links { gap: 0; }
   .nav__link { padding: 9px 11px; font-size: 0.82rem; }
 }
 
-/* ==========================================================================
-   19b. RESPONSIVE — MOBILE NAV (hamburger)
-   ========================================================================== */
+
 @media (max-width: 900px) {
   :root { --nav-h: 64px; }
 
@@ -1583,9 +1575,7 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
   .nav__logo-text { font-size: 0.95rem; max-width: 40vw; }
 }
 
-/* ==========================================================================
-   19c. RESPONSIVE — PHONES (portrait)
-   ========================================================================== */
+
 @media (max-width: 760px) {
   .section { padding: 68px 0; }
   .memory-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -1619,9 +1609,7 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
   .music-btn:hover { transform: none; }
 }
 
-/* ==========================================================================
-   19d. RESPONSIVE — SMALL PHONES
-   ========================================================================== */
+
 @media (max-width: 520px) {
   :root { --nav-h: 60px; }
 
@@ -1671,9 +1659,7 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
   .footer__hint { display: none; }
 }
 
-/* ==========================================================================
-   19e. RESPONSIVE — VERY SMALL / SHORT VIEWPORTS
-   ========================================================================== */
+
 @media (max-width: 380px) {
   .hero__title { font-size: 1.65rem; }
   .hero__kicker { font-size: 0.65rem; letter-spacing: 1.6px; }
@@ -1717,9 +1703,7 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
   .section { padding: 52px 0; }
 }
 
-/* ==========================================================================
-   20. TOUCH DEVICES — disable cursor & heavy hover
-   ========================================================================== */
+
 @media (hover: none), (pointer: coarse) {
   .cursor-dot,
   .cursor-ring,
@@ -1748,9 +1732,7 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
   }
 }
 
-/* ==========================================================================
-   21. REDUCED MOTION
-   ========================================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -2020,11 +2002,7 @@ body.is-entered .footer { opacity: 1; transition: opacity 1s ease 0.7s; }
 <audio id="bgMusic" loop preload="none"></audio>
 
 <script>
-/* ==========================================================================
-   HAPPY BIRTHDAY — script (embedded, scroll-fixed)
-   ========================================================================== */
 
-/* 00. CONFIG -------------------------------------------------------------- */
 const birthdayConfig = {
   name: "Esrah",
   nickname: "Ezhaboomboompaw",
@@ -2186,7 +2164,7 @@ const birthdayConfig = {
   musicFile: "love.mp3"
 };
 
-/* 01. HELPERS ------------------------------------------------------------- */
+
 const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -2229,7 +2207,7 @@ document.addEventListener("dblclick", (e) => {
   if (e.target.closest("button, a")) e.preventDefault();
 }, { passive: false });
 
-/* 02. INTRO SEQUENCE ------------------------------------------------------ */
+
 function initIntro() {
   const intro   = $("#intro");
   const stars   = $("#introStars");
@@ -2277,7 +2255,7 @@ function initIntro() {
   });
 }
 
-/* 03. STAR FIELD ---------------------------------------------------------- */
+
 const StarField = (() => {
   const canvas = $("#skyCanvas");
   if (!canvas) return { init() {} };
@@ -2370,7 +2348,7 @@ const StarField = (() => {
   return { init };
 })();
 
-/* 04. FLOATIES ------------------------------------------------------------ */
+
 const Floaties = (() => {
   const layer = $("#floaties");
   if (!layer) return { start() {}, spawnBurst() {} };
@@ -2421,7 +2399,6 @@ const Floaties = (() => {
   return { start, spawnBurst };
 })();
 
-/* 05. CURSOR -------------------------------------------------------------- */
 const Cursor = (() => {
   const dot  = $("#cursorDot");
   const ring = $("#cursorRing");
@@ -2493,7 +2470,7 @@ const Cursor = (() => {
   return { init };
 })();
 
-/* 06. CONFETTI ------------------------------------------------------------ */
+
 const Confetti = (() => {
   const canvas = $("#confettiCanvas");
   if (!canvas) return { burst() {}, rain() {}, hearts() {} };
@@ -2652,7 +2629,7 @@ const Confetti = (() => {
   return { init, burst, rain, hearts };
 })();
 
-/* 07. NAVIGATION ---------------------------------------------------------- */
+
 function initNavigation() {
   const nav      = $("#nav");
   const toggle   = $("#navToggle");
@@ -2747,7 +2724,7 @@ function initReveal() {
   items.forEach((el) => observer.observe(el));
 }
 
-/* 08. HERO ---------------------------------------------------------------- */
+
 function initHero() {
   const name = birthdayConfig.name;
   ["#heroName", "#navName", "#footerName"].forEach((sel) => {
@@ -2798,7 +2775,7 @@ function initHero() {
   setTimeout(type, 900);
 }
 
-/* 09. CAKE ---------------------------------------------------------------- */
+
 function initCake() {
   const cake   = $("#cake");
   const hint   = $("#cakeHint");
@@ -2854,7 +2831,7 @@ function initCake() {
   });
 }
 
-/* 10. MEMORIES ------------------------------------------------------------ */
+
 function initMemories() {
   const grid = $("#memoryGrid");
   if (!grid) return;
@@ -2949,7 +2926,7 @@ function initMemories() {
   });
 }
 
-/* 11. BUBBLES ------------------------------------------------------------- */
+
 function initBubbles() {
   const field = $("#bubbleField");
   if (!field) return;
@@ -2987,7 +2964,7 @@ function initBubbles() {
   });
 }
 
-/* 12. QUIZ ---------------------------------------------------------------- */
+
 function initQuiz() {
   const body      = $("#quizBody");
   const countEl   = $("#quizCount");
@@ -3099,7 +3076,7 @@ function initQuiz() {
   renderQuestion();
 }
 
-/* 13. WISHES -------------------------------------------------------------- */
+
 function initWishes() {
   const textEl = $("#wishText");
   const dotsEl = $("#wishDots");
@@ -3181,7 +3158,7 @@ function initWishes() {
   typeNext();
 }
 
-/* 14. SECRET -------------------------------------------------------------- */
+
 function initSecret() {
   const trigger   = $("#secretBtn");
   const overlay   = $("#secretOverlay");
@@ -3253,7 +3230,7 @@ function initSecret() {
   });
 }
 
-/* 15. GIFT ---------------------------------------------------------------- */
+
 function initGift() {
   const gift   = $("#giftBox");
   const finale = $("#finale");
@@ -3302,7 +3279,7 @@ function initGift() {
   });
 }
 
-/* 16. MUSIC --------------------------------------------------------------- */
+
 function initMusic() {
   const btn   = $("#musicBtn");
   const icon  = $("#musicIcon");
@@ -3347,7 +3324,7 @@ function initMusic() {
   });
 }
 
-/* 17. EASTER EGGS --------------------------------------------------------- */
+
 function initEasterEggs() {
   const eggs = birthdayConfig.easterEggs;
 
@@ -3410,7 +3387,7 @@ function initEasterEggs() {
   });
 }
 
-/* 18. BOOTSTRAP ----------------------------------------------------------- */
+
 function boot() {
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
